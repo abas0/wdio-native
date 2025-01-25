@@ -21,7 +21,7 @@ class SignUp {
         return $('-android uiautomator:new UiSelector().className(\"android.view.ViewGroup\").instance(17)');
     }
 
-    async singUp (email, password) {
+    async singUp (email, password, confirm_password) {
         await this.btnSignUpTab.waitForDisplayed()
         await this.btnSignUpTab.click()
         await this.inputEmail.waitForDisplayed()
@@ -29,7 +29,7 @@ class SignUp {
         await this.inputPassword.waitForDisplayed()
         await this.inputPassword.setValue(password)
         await this.inputConfirmPassword.waitForDisplayed()
-        await this.inputConfirmPassword.setValue(password)
+        await this.inputConfirmPassword.setValue(confirm_password)
         await this.btnSignUp.click();
     }
 }
