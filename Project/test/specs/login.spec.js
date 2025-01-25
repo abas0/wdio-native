@@ -19,7 +19,6 @@ describe('Login test', () => {
     })
 
     it('shouldnt allow to login once the fields are blank', async() => {
-        // await MenuPage.login() // fazer um before
         await LoginPage.login('', '')
         await expect(MessagesPage.messageText("Please enter a valid email address"))
         await expect(MessagesPage.messageText("Please enter at least 8 characters"))
