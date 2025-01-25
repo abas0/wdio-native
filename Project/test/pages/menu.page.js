@@ -9,6 +9,10 @@ class MenuPage {
         return $('accessibility id:Forms')
     }
 
+    get btnHomeOption(){
+        return $("accessibility id:Home");
+    }
+
     async login(){
         await this.btnLoginOption.waitForDisplayed()
         await this.btnLoginOption.click()
@@ -17,6 +21,11 @@ class MenuPage {
     async forms(){
         await this.btnFormsOption.waitForDisplayed()
         await this.btnFormsOption.click()
+    }
+
+    async home(){
+        await this.btnHomeOption.waitForDisplayed()
+        await this.btnHomeOption.click()
     }
 }
 

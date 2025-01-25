@@ -6,5 +6,8 @@
     "validSignUp":{
         "email": "signup123@gmail.com",
         "password": "signup123"
+    },
+    "validForms":{
+        "input_fields": "anything"
     }
 }
