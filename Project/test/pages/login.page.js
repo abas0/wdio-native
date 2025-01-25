@@ -13,10 +13,6 @@ class LoginPage {
         return $('-android uiautomator:new UiSelector().className(\"android.view.ViewGroup\").instance(16)')
     }
 
-    get popUpSuccess(){
-        return $('//android.widget.TextView[@text="Success"]')
-    }
-
     async login (email, password) {
         await this.inputEmail.waitForDisplayed()
         await this.inputEmail.setValue(email)

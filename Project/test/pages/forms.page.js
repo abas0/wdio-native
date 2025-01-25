@@ -16,11 +16,7 @@ class FormsPage{
     get btnActive(){
         return $('accessibility id:button-Active')
     }
-
-    get popUpSuccess(){ //TO-DO melhoria com os pop-ups
-        return $('//android.widget.TextView[@text="This button is active"]')
-    }
-
+    
     async forms(input_field){
         await this.inputField.waitForDisplayed()
         await this.inputField.setValue(input_field)

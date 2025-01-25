@@ -21,10 +21,6 @@ class SignUp {
         return $('-android uiautomator:new UiSelector().className(\"android.view.ViewGroup\").instance(17)');
     }
 
-    get popUpSuccess(){
-        return $('//android.widget.TextView[@text="Signed Up!"]');
-    }
-
     async singUp (email, password) {
         await this.btnSignUpTab.waitForDisplayed()
         await this.btnSignUpTab.click()
