@@ -5,11 +5,16 @@
     },
     "validSignUp":{
         "email": "signup123@gmail.com",
-        "password": "signup123"
+        "password": "signup123",
+        "confirm_password": "signup123"
     },
     "invalidSignUp":{
-        "email": "a.gmail.com",
-        "password": "1"
+        "wrong_email": "a.gmail.com",
+        "wrong_password": "1",
+        "confirm_password": "1",
+        "right_email": "a@gmail.com",
+        "right_password": "12345678",
+        "wrong_confirm_password": "1234"
     },
     "validForms":{
         "input_field": "anything"
