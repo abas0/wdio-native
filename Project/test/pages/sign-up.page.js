@@ -1,10 +1,6 @@
 const { $ } = require('@wdio/globals')
 
 class SignUp {
-    get btnLoginOption(){
-        return $('accessibility id:Login')
-    }
-
     get btnSignUpTab(){
         return $('-android uiautomator:new UiSelector().className(\"android.view.ViewGroup\").instance(11)')
     }
@@ -30,7 +26,6 @@ class SignUp {
     }
 
     async singUp (email, password) {
-        await this.btnLoginOption.click()
         await this.btnSignUpTab.waitForDisplayed()
         await this.btnSignUpTab.click()
         await this.inputEmail.waitForDisplayed()

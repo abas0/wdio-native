@@ -1,9 +1,6 @@
 const { $ } = require('@wdio/globals')
 
 class LoginPage {
-    get btnLoginOption(){
-        return $('accessibility id:Login')
-    }
     get inputEmail () {
         return $('accessibility id:input-email')
     }
@@ -21,7 +18,6 @@ class LoginPage {
     }
 
     async login (email, password) {
-        await this.btnLoginOption.click()
         await this.inputEmail.waitForDisplayed()
         await this.inputEmail.setValue(email)
         await this.inputPassword.waitForDisplayed()
