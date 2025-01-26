@@ -7,9 +7,12 @@ const MessagesPage = require('../pages/messages.page')
 
 describe('Sign up test', () => {
     beforeEach(async() => {
-        await driver.execute('mobile: terminateApp', { 'appId': 'com.wdiodemoapp'});
         await driver.execute('mobile: activateApp', { 'appId': 'com.wdiodemoapp'});
         await MenuPage.login()
+    })
+
+    afterEach(async() => {
+        await driver.execute('mobile: terminateApp', { 'appId': 'com.wdiodemoapp'})
     })
 
     it('should create a new user successfully with valid fields', async() => {

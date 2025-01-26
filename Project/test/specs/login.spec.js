@@ -7,9 +7,12 @@ const testData = require('../../data/testData.json')
 
 describe('Login test', () => {
     beforeEach(async() => {
-        await driver.execute('mobile: terminateApp', { 'appId': 'com.wdiodemoapp'});
-        await driver.execute('mobile: activateApp', { 'appId': 'com.wdiodemoapp'});
+        await driver.execute('mobile: activateApp', { 'appId': 'com.wdiodemoapp'})
         await MenuPage.login()
+    })
+
+    afterEach(async() => {
+        await driver.execute('mobile: terminateApp', { 'appId': 'com.wdiodemoapp'})
     })
 
     it('should login with valid credentials', async() => {
