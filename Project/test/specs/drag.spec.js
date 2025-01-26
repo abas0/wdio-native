@@ -13,8 +13,15 @@ describe('Drag tests', () => {
         await driver.execute('mobile: terminateApp', { 'appId': 'com.wdiodemoapp'})
     })
 
-    it('should filter documentation', async() => {
-        await DragPage.dragAndDropItem()
+    it('drag and drop successfully', async() => {
+        await DragPage.dragAndDropItems()
         await expect(MessagesPage.messageText("You made it, click retry if you want to try it again.")).toBeDisplayed()
+    }) 
+
+    it('restart drag and drop game successfully', async() => {
+        await DragPage.dragAndDropOneItem()
+        await(expect(DragPage.getDrag("l1"))).not.toBeExisting()
+        await DragPage.restarDragAndDrop()
+        await(expect(DragPage.getDrag("l1"))).toBeExisting()
     })
 })

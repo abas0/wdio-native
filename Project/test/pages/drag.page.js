@@ -9,7 +9,11 @@ class DragPage{
         return $('-android uiautomator:new UiSelector().className(\"android.view.ViewGroup\").instance(8)')
     }
 
-    async dragAndDropItem() {
+    get btnRestart(){
+        return $('accessibility id:renew')
+    }
+
+    async dragAndDropItems() {
         const dragIndex = ["l1", "c1" ,"r1", "l2", "c2", "r2", "l3", "c3", "r3"]
         const droppable = await this.dropElement
 
@@ -17,6 +21,16 @@ class DragPage{
             const draggable = await this.getDrag(index)
             await draggable.dragAndDrop(droppable)
         }
+    }
+
+    async dragAndDropOneItem(){
+        const draggable = await this.getDrag("l1")
+        const droppable = await this.dropElement
+        await draggable.dragAndDrop(droppable)
+    }
+
+    async restarDragAndDrop(){
+        await this.btnRestart.click()
     }
 }
 
