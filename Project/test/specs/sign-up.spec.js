@@ -1,11 +1,11 @@
 const { expect } = require('@wdio/globals')
 const SignUp = require('../pages/sign-up.page')
 const MenuPage = require('../pages/menu.page')
-const testData = require('../../data/testData.json')
 const PopUpPage = require('../pages/pop-up.page')
 const MessagesPage = require('../pages/messages.page')
+const testData = require('../../data/testData.json')
 
-describe('Sign up test', () => {
+describe('Sign up tests', () => {
     beforeEach(async() => {
         await driver.execute('mobile: activateApp', { 'appId': 'com.wdiodemoapp'});
         await MenuPage.login()
