@@ -5,6 +5,10 @@ class FormsPage{
         return $('accessibility id:text-input')
     }
 
+    get inputTextResult(){
+        return $('accessibility id:input-text-result')
+    }
+
     get dropdown(){
         return $('-android uiautomator:new UiSelector().resourceId(\"text_input\")')
     }
@@ -17,7 +21,7 @@ class FormsPage{
         return $('accessibility id:button-Active')
     }
     
-    async forms(input_field){
+    async formsComplete(input_field){
         await this.inputField.waitForDisplayed()
         await this.inputField.setValue(input_field)
         await this.dropdown.click()
@@ -25,6 +29,11 @@ class FormsPage{
         await this.popUpOption.click()
         await this.btnActive.waitForDisplayed()
         await this.btnActive.click()
+    }
+
+    async formsTextResult(input_field){
+        await this.inputField.waitForDisplayed()
+        await this.inputField.setValue(input_field)
     }
 }
 
