@@ -19,9 +19,14 @@ describe('Drag tests', () => {
     }) 
 
     it('restart drag and drop game successfully', async() => {
-        await DragPage.dragAndDropOneItem()
+        await DragPage.dragAndDropOneItem("l1")
         await(expect(DragPage.getDrag("l1"))).not.toBeExisting()
         await DragPage.restarDragAndDrop()
         await(expect(DragPage.getDrag("l1"))).toBeExisting()
+    }) 
+    it('drag and drop the wrong image', async() => {
+        await DragPage.dragAndDropOneItem("r3")
+        await(expect(DragPage.getDrag("l1"))).toBeExisting()
+        await(expect(DragPage.getDrag("r3"))).toBeExisting()
     })
 })

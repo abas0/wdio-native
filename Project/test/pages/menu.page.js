@@ -21,6 +21,10 @@ class MenuPage {
         return $('accessibility id:Drag')
     }
 
+    get btnSwipeOption(){
+        return $('accessibility id:Swipe')
+    }
+
     async login(){
         await this.btnLoginOption.waitForDisplayed()
         await this.btnLoginOption.click()
@@ -44,6 +48,11 @@ class MenuPage {
     async drag(){
         await this.btnDragOption.waitForDisplayed()
         await this.btnDragOption.click()
+    }
+
+    async swipe(){
+        await this.btnSwipeOption.waitForDisplayed()
+        await this.btnSwipeOption.click()
     }
 }
 
