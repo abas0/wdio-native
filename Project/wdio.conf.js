@@ -59,7 +59,9 @@ exports.config = {
         'appium:deviceName': 'Pixel 9 Pro XL API 35',
         'appium:app': path.join(__dirname, 'apk', 'android.wdio.native.app.v1.0.8.apk')
     }],
-
+    featureFlags: {
+        specFiltering: true
+    },
     //
     // ===================
     // Test Configurations

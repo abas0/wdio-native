@@ -23,8 +23,8 @@ class DragPage{
         }
     }
 
-    async dragAndDropOneItem(){
-        const draggable = await this.getDrag("l1")
+    async dragAndDropOneItem(image){
+        const draggable = await this.getDrag(image)
         const droppable = await this.dropElement
         await draggable.dragAndDrop(droppable)
     }

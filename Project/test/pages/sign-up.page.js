@@ -1,6 +1,6 @@
 const { $ } = require('@wdio/globals')
 
-class SignUp {
+class SignUpPage {
     get btnSignUpTab(){
         return $('-android uiautomator:new UiSelector().className(\"android.view.ViewGroup\").instance(11)')
     }
@@ -18,7 +18,7 @@ class SignUp {
     }
     
     get btnSignUp () {
-        return $('-android uiautomator:new UiSelector().className(\"android.view.ViewGroup\").instance(17)');
+        return $('-android uiautomator:new UiSelector().className(\"android.view.ViewGroup\").instance(17)')
     }
 
     async singUp (email, password, confirm_password) {
@@ -30,8 +30,8 @@ class SignUp {
         await this.inputPassword.setValue(password)
         await this.inputConfirmPassword.waitForDisplayed()
         await this.inputConfirmPassword.setValue(confirm_password)
-        await this.btnSignUp.click();
+        await this.btnSignUp.click()
     }
 }
 
-module.exports = new SignUp();
+module.exports = new SignUpPage()
